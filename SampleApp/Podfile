@@ -1,0 +1,15 @@
+platform :ios, '5.0'
+
+# Refer to the parent folder to grab the podspec locally
+# this means we can edit it and changes will be made in that folder
+
+pod "SampleLib", :path => "../"
+
+# By default CocoaPods only makes changes to your main library
+# so we ensure that the test library gets the pod by including it here.
+
+# As it is included earlier with path CocoaPods will use the same version
+
+target :SampleAppTests do
+  pod "SampleLib"
+end
