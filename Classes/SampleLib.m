@@ -25,7 +25,7 @@
 
 - (UIImage *)picture
 {
-    return [UIImage imageNamed:@"iMakeit4U-256"];
+    return [UIImage imageNamed:@"iMakeit4U.png"];
 }
 
 @end

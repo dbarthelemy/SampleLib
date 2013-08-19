@@ -7,8 +7,14 @@
 //
 
 #import "M4UFlipsideViewController.h"
+#import "SampleLib.h"
 
 @interface M4UFlipsideViewController ()
+@property (retain, nonatomic) IBOutlet UILabel *firstNameLabel;
+@property (retain, nonatomic) IBOutlet UILabel *lastNameLabel;
+@property (retain, nonatomic) IBOutlet UIImageView *pictureImageView;
+
+@property (retain, nonatomic) SampleLib *mySampleLib;
 
 @end
 
@@ -24,6 +30,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.mySampleLib = [[[SampleLib alloc] init] autorelease];
+    self.firstNameLabel.text = self.mySampleLib.firstName;
+    self.lastNameLabel.text = self.mySampleLib.lastName;
+    self.pictureImageView.image = self.mySampleLib.picture;
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,4 +49,11 @@
     [self.delegate flipsideViewControllerDidFinish:self];
 }
 
+- (void)dealloc {
+    [_firstNameLabel release];
+    [_lastNameLabel release];
+    [_pictureImageView release];
+    [_mySampleLib release];
+    [super dealloc];
+}
 @end

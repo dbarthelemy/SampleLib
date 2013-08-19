@@ -14,7 +14,7 @@
                         <subviews>
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="13">
                                 <items>
-                                    <navigationItem title="Title" id="14">
+                                    <navigationItem title="SampleApp" id="14">
                                         <barButtonItem key="rightBarButtonItem" title="Info" id="15">
                                             <connections>
                                                 <action selector="togglePopover:" destination="2" id="23"/>
@@ -51,7 +51,7 @@
                         <subviews>
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="17">
                                 <items>
-                                    <navigationItem title="Title" id="18">
+                                    <navigationItem title="Info" id="18">
                                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="19">
                                             <connections>
                                                 <action selector="done:" destination="5" id="21"/>
@@ -60,21 +60,68 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35Q-Pa-XhX">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="jij-t4-x4U"/>
+                                    <constraint firstAttribute="height" constant="128" id="rqy-cZ-cI5"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="firstName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Biz-n1-qzZ">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="lastName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oiA-wh-pZh">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Biz-n1-qzZ" firstAttribute="centerX" secondItem="35Q-Pa-XhX" secondAttribute="centerX" type="default" id="JXU-wZ-c4C"/>
                             <constraint firstItem="17" firstAttribute="top" secondItem="9" secondAttribute="top" type="default" id="Lrv-p2-UP8"/>
                             <constraint firstItem="17" firstAttribute="trailing" secondItem="9" secondAttribute="trailing" type="default" id="PRu-8s-dhg"/>
+                            <constraint firstItem="oiA-wh-pZh" firstAttribute="top" secondItem="Biz-n1-qzZ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Yr5-5p-7TN"/>
+                            <constraint firstItem="35Q-Pa-XhX" firstAttribute="top" secondItem="9" secondAttribute="top" constant="80" id="YuC-rp-GiD"/>
+                            <constraint firstItem="oiA-wh-pZh" firstAttribute="centerX" secondItem="Biz-n1-qzZ" secondAttribute="centerX" type="user" id="Yxt-VW-Ifg"/>
+                            <constraint firstItem="35Q-Pa-XhX" firstAttribute="centerX" secondItem="17" secondAttribute="centerX" type="default" id="h28-pN-Kzt"/>
+                            <constraint firstItem="Biz-n1-qzZ" firstAttribute="top" secondItem="35Q-Pa-XhX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="tlv-uu-nrf"/>
                             <constraint firstItem="17" firstAttribute="leading" secondItem="9" secondAttribute="leading" type="default" id="vQR-Rw-aMI"/>
                         </constraints>
                     </view>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="firstNameLabel" destination="Biz-n1-qzZ" id="hmh-V3-Tr5"/>
+                        <outlet property="lastNameLabel" destination="oiA-wh-pZh" id="wXu-yH-I5V"/>
+                        <outlet property="pictureImageView" destination="35Q-Pa-XhX" id="Vfz-2o-THm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="836" y="101"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="M4UFlipsideViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/M4UFlipsideViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="firstNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lastNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pictureImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="M4UMainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/M4UMainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="togglePopover:"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

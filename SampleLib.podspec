@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '5.0'
   s.source_files = "Classes/**/*.{m,h}"
   s.public_header_files = 'Classes/SampleLib.h'
-  s.resources = 'Assets'
+  s.resources = 'Assets/*'
   s.requires_arc = false
 
   s.frameworks = 'Foundation'
