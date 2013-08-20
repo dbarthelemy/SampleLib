@@ -7,26 +7,66 @@
 //
 
 #import "SampleAppTests.h"
+#import "SampleLib.h"
+
+@interface SampleAppTests ()
+
+@property (nonatomic, retain) SampleLib *myLibrarie;
+
+@end
+
 
 @implementation SampleAppTests
 
-- (void)setUp
++ (void)setUp
 {
     [super setUp];
     
     // Set-up code here.
 }
 
-- (void)tearDown
++ (void)tearDown
 {
     // Tear-down code here.
     
     [super tearDown];
 }
 
-- (void)testExample
+- (void)setUp
 {
-    STFail(@"Unit tests are not implemented yet in SampleAppTests");
+    [super setUp];
+    
+    // Set-up code here.
+    self.myLibrarie = [[SampleLib alloc] init];
+}
+
+- (void)tearDown
+{
+    // Tear-down code here.
+    self.myLibrarie = nil;
+    
+    [super tearDown];
+}
+
+- (void)testFirstName
+{
+    STAssertEqualObjects(self.myLibrarie.firstName, @"David", @"Unexpected first name");
+}
+
+- (void)testLastName
+{
+    STAssertEqualObjects(self.myLibrarie.lastName, @"Barthélémy", @"Unexpected last name");
+}
+
+- (void)testPicture
+{
+    STAssertNotNil(self.myLibrarie.picture, @"Undefined picture");
+}
+
+- (void)testZZZ
+{
+    NSLog(@"Done");
+    STAssertTrue(YES, @"Last test might not be executed");
 }
 
 @end
