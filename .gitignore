@@ -17,6 +17,7 @@ DerivedData
 *.hmap
 
 #CocoaPods
+Podfile.lock
 Pods
 *.xcworkspace
 !default.xcworkspace
