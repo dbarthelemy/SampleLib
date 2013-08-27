@@ -12,4 +12,6 @@
 @property (nonatomic, readonly) NSString *lastName;
 @property (nonatomic, readonly) UIImage *picture;
 
+- (NSInteger)maxDistanceInArray:(NSArray *)array;
+
 @end

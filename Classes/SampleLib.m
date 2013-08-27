@@ -7,6 +7,7 @@
 //
 
 #import "SampleLib.h"
+#import "SampleLibC.h"
 
 @implementation SampleLib
 
@@ -26,6 +27,24 @@
 - (UIImage *)picture
 {
     return [UIImage imageNamed:@"iMakeit4U.png"];
+}
+
+- (NSInteger)maxDistanceInArray:(NSArray *)array
+{
+    // Objective-C to C array conversion
+    int *cArray;
+    cArray = malloc(sizeof(int) * [array count]);
+    for (int idx = 0; idx < [array count]; idx++) {
+        cArray[idx] = [array[idx] intValue];
+    }
+    
+    // C Algo execution
+    Result result = findMaxDistanceOn2(cArray, [array count]);
+
+    // C array release
+    free(cArray);
+    
+    return result.d;
 }
 
 @end

@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.description  =  'This is a sample library structured as a Pod used as the basis for rapid prototyping of new idea.'
 
   s.platform     = :ios, '5.0'
-  s.source_files = "Classes/**/*.{m,h}"
+  s.source_files = "Classes/**/*.{m,h,c}"
   s.public_header_files = 'Classes/SampleLib.h'
   s.resources = 'Assets/*'
   s.requires_arc = false
