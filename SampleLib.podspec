@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         =  'SampleLib'
-  s.version      =  '0.0.1'
+  s.version      =  '0.1.0'
   s.license      =  { :type => 'MIT', :file => 'LICENSE' }
   s.homepage     =  'http://github.com/dbarthelemy/SampleLib'
   s.authors      =  { 'dbarthelemy' => 'dbarthelemy@imakeit4u.com' }

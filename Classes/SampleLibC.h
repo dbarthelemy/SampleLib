@@ -1,5 +1,5 @@
 //
-//  SampleLib.c
+//  SampleLibC.h
 //  Pods
 //
 //  Created by David Barthelemy on 21/08/13.
