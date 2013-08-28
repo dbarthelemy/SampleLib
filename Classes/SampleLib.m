@@ -39,7 +39,7 @@
     }
     
     // C Algo execution
-    Result result = findMaxDistanceOn2(cArray, [array count]);
+    Result result = findMaxDistance(cArray, [array count]);
 
     // C array release
     free(cArray);

@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '5.0'
   s.source_files = "Classes/**/*.{m,h,c}"
-  s.public_header_files = 'Classes/SampleLib.h'
+  s.public_header_files = 'Classes/SampleLib.h', 'Classes/SampleLibC.h'
   s.resources = 'Assets/*'
   s.requires_arc = false
 

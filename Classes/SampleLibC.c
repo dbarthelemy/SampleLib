@@ -9,6 +9,15 @@
 #include <stdio.h>
 #include "SampleLibC.h"
 
+static Result findMaxDistanceOn2(int[], int);
+static Result findMaxDistanceOn(int[], int);
+
+// Public functions
+Result findMaxDistance(int input[], int size) {
+    return findMaxDistanceOn2(input, size);
+}
+
+// Private function
 Result findMaxDistanceOn2(int input[], int size) {
     int n = size;
     int i = 0;
@@ -40,5 +49,5 @@ Result findMaxDistanceOn2(int input[], int size) {
 }
 
 Result findMaxDistanceOn(int input[], int size) {
-    // FIXME
+    // TODO
 }

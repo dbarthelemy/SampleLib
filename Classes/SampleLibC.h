@@ -14,5 +14,4 @@ typedef struct resultStruct {
     int i, j, d, iteration;
 } Result;
 
-Result findMaxDistanceOn2(int[], int);
-Result findMaxDistanceOn(int[], int);
+Result findMaxDistance(int[], int);
